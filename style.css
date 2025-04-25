@@ -1,0 +1,220 @@
+/* Root variables for color scheme and theme */
+:root {
+    --primary-color: #4a90e2;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --container-bg: #f5f5f5;
+    /* Button colors */
+    --get-joke-color: #4CAF50;
+    --copy-joke-color: #FF9800;
+    --download-joke-color: #E91E63;
+    --button-text: #ffffff;
+    --button-hover: #357abd;
+}
+
+.dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --container-bg: #2d2d2d;
+    /* Adjust button colors for dark mode */
+    --get-joke-color: #66BB6A;
+    --copy-joke-color: #FFA726;
+    --download-joke-color: #EC407A;
+    --button-hover: #2d6da3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle {
+    display: none;
+}
+
+.theme-label {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.theme-label i {
+    font-size: 14px;
+    color: #fff;
+}
+
+.theme-label::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#theme-toggle:checked + .theme-label::after {
+    transform: translateX(30px);
+}
+
+/* Container animation */
+.container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.joke-container {
+    background-color: var(--container-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+#joke-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    min-height: 80px;
+    transition: all 0.3s ease;
+}
+
+#joke-text.loading {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Button styles with specific colors and animations */
+#get-joke {
+    background-color: var(--get-joke-color);
+}
+
+#get-joke:hover {
+    animation: bounce 0.5s infinite;
+    background-color: #388E3C;
+}
+
+#copy-joke {
+    background-color: var(--copy-joke-color);
+}
+
+#copy-joke:hover {
+    animation: shake 0.5s ease-in-out;
+    background-color: #F57C00;
+}
+
+#download-joke {
+    background-color: var(--download-joke-color);
+}
+
+#download-joke:hover {
+    animation: bounce 0.5s infinite;
+    background-color: #C2185B;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .joke-container {
+        padding: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.jpg" type="image/x-icon" />
+    <title>Joke Generator v2</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="light-mode">
+    <div class="theme-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <label for="theme-toggle" class="theme-label">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+      </label>
+    </div>
+
+    <div class="container">
+      <h1>Joke Generator v2</h1>
+      <div class="joke-container">
+        <p id="joke-text">Click the button below to get a joke! 😊</p>
+        <div class="buttons">
+          <button id="get-joke" class="btn">
+            <i class="fas fa-laugh-beam"></i> Get New Joke
+          </button>
+          <button id="copy-joke" class="btn">
+            <i class="fas fa-copy"></i> Copy Joke
+          </button>
+          <button id="download-joke" class="btn">
+            <i class="fas fa-download"></i> Download Joke
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
