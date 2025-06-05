@@ -1,84 +1,68 @@
-# Joke Generator v2
+# SnappyJoke
 
-A simple and responsive web application that fetches and displays random dad jokes using the [icanhazdadjoke API](https://icanhazdadjoke.com/). Built with HTML, CSS, and JavaScript, this project offers a fun way to lighten up your day with a touch of humor.
+A modern and responsive web app that fetches and displays random dad jokes using the [icanhazdadjoke API](https://icanhazdadjoke.com/). Built with HTML, CSS, and JavaScript, SnappyJoke is designed with modern UI trends (2024–2025), a clean codebase, dark/light theme support, and animations to make every chuckle look good.
 
 ## 🎯 Features
 
-- **Random Joke Fetching**: Retrieves a new joke each time the user clicks the "Get Joke" button.
-- **Responsive Design**: Ensures optimal viewing experience across various devices.
-- **Clean and Intuitive UI**: User-friendly interface for seamless interaction.
+- 🎭 **Random Joke Fetching** – Just one click and you’ll get a new laugh
+- 🌓 **Dark / Light Mode Toggle** – Theme saved in localStorage
+- 💻 **Responsive Design** – Looks great on all devices
+- 🎨 **Modern UI** – Uses glassmorphism, smooth animations, and pastel palette
+- 📋 **Copy Joke** – One-click copy with feedback animation
 
 ## 🚀 Live Demo
 
-Experience the Joke Generator in action: [Live Site](https://ammonrobertsjokegenerator.netlify.app/)
+[🔗 View Live Website](https://your-demo-link-here.com)
 
 ## 🛠️ Technologies Used
 
-- **HTML**: Structure of the web application.
-- **CSS**: Styling and layout.
-- **JavaScript**: Functionality and API integration.
+- **HTML5** – Markup and structure
+- **CSS3** – Modern styles, animations, responsive design
+- **JavaScript (Vanilla)** – API integration, theme toggle, clipboard support
 
-## 📦 Installation and Setup
+## 📦 Installation & Setup
 
-To run this project locally:
+```bash
+# Clone the repository
+git clone https://github.com/mtrong100/snappyjoke.git
 
-1. **Clone the repository**:
+# Navigate to the folder
+cd snappyjoke
 
-   ```bash
-   git clone https://github.com/mtrong100/joke-generator-v2.git
-   ```
+# Open index.html in your browser
+```
 
-2. **Navigate to the project directory**:
+You can also use Live Server extension (VS Code recommended).
 
-   ```bash
-   cd joke-generator-v2
-   ```
-
-3. **Open `index.html` in your preferred web browser**:
-
-   You can simply double-click the `index.html` file or use a live server extension if you're using a code editor like VS Code.
-
-## 🧩 Project Structure
+## 📁 Project Structure
 
 ```
-joke-generator-v2/
-├── index.html       # Main HTML file
-├── style.css        # Stylesheet for the application
-├── script.js        # JavaScript file containing functionality
-└── favicon.jpg      # Favicon for the website
+snappyjoke/
+├── index.html       # Main HTML page with meta SEO tags
+├── style.css        # Updated modern UI with animations
+├── script.js        # Clean JavaScript logic
+├── favicon.png      # Site icon
+└── README.md        # This file
 ```
 
 ## 🔗 API Reference
 
-This project utilizes the [icanhazdadjoke API](https://icanhazdadjoke.com/api) to fetch random dad jokes. The API is free to use and does not require an API key.
+Powered by the [icanhazdadjoke API](https://icanhazdadjoke.com/api). Free, no key required.
+
+## 📸 Screenshot
+
+![Screenshot](./assets/demo.png) <!-- Add real screenshot later -->
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to enhance the project:
+If you want to improve this project:
 
-1. **Fork the repository**.
-2. **Create a new branch**:
-
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-
-3. **Commit your changes**:
-
-   ```bash
-   git commit -m 'Add your feature'
-   ```
-
-4. **Push to the branch**:
-
-   ```bash
-   git push origin feature/YourFeature
-   ```
-
-5. **Open a Pull Request**.
-
-Please ensure your code adheres to the existing style and includes relevant tests if applicable.
+1. Fork it
+2. Create a branch (`git checkout -b feature/AmazingFeature`)
+3. Commit (`git commit -m 'Add something cool'`)
+4. Push (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📄 License
 
-This project is open-source and available under the [MIT License](LICENSE).
+MIT © 2025 [Your Name](https://github.com/yourusername)

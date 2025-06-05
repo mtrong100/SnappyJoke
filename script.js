@@ -1,85 +1,74 @@
-// DOM Elements
+// Joke Generator V2 - Updated with clean code and comments
+
+// ====== DOM Elements ======
 const jokeText = document.getElementById("joke-text");
 const newJokeBtn = document.getElementById("new-joke-btn");
 const copyJokeBtn = document.getElementById("copy-joke-btn");
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = themeToggle.querySelector("i");
 
-// API Configuration
+// ====== API Configuration ======
 const API_URL = "https://icanhazdadjoke.com/";
-const HEADERS = {
-  headers: {
-    Accept: "application/json",
-  },
-};
+const HEADERS = { headers: { Accept: "application/json" } };
 
-// State
+// ====== State ======
 let currentJoke = "";
 let isDarkMode = false;
 
-// Check for saved theme preference
+// Load saved theme preference from localStorage
 if (localStorage.getItem("darkMode") === "true") {
   isDarkMode = true;
   updateTheme();
 }
 
-// Functions
+// ====== Functions ======
+
+// Fetch a new joke from the API
 async function fetchJoke() {
   try {
-    // Show loading state
     jokeText.innerHTML = '<div class="loader"></div>';
-
     const response = await fetch(API_URL, HEADERS);
     const data = await response.json();
     currentJoke = data.joke;
     jokeText.textContent = currentJoke;
   } catch (error) {
     console.error("Error fetching joke:", error);
-    currentJoke =
-      "Why don't skeletons fight each other? They don't have the guts!";
+    currentJoke = "Oops! Something went wrong. Try again later.";
     jokeText.textContent = currentJoke;
   }
 }
 
+// Copy the current joke to clipboard
 function copyJokeToClipboard() {
   if (!currentJoke) return;
 
-  navigator.clipboard
-    .writeText(currentJoke)
-    .then(() => {
-      // Visual feedback
-      const originalText = copyJokeBtn.innerHTML;
-      copyJokeBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-
-      setTimeout(() => {
-        copyJokeBtn.innerHTML = originalText;
-      }, 2000);
-    })
-    .catch((err) => {
-      console.error("Failed to copy:", err);
-    });
+  navigator.clipboard.writeText(currentJoke).then(() => {
+    const original = copyJokeBtn.innerHTML;
+    copyJokeBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => (copyJokeBtn.innerHTML = original), 2000);
+  });
 }
 
+// Toggle between light and dark themes
 function toggleTheme() {
   isDarkMode = !isDarkMode;
   updateTheme();
   localStorage.setItem("darkMode", isDarkMode);
 }
 
+// Update the UI based on theme mode
 function updateTheme() {
-  if (isDarkMode) {
-    document.body.classList.add("dark");
-    themeIcon.classList.replace("fa-moon", "fa-sun");
-  } else {
-    document.body.classList.remove("dark");
-    themeIcon.classList.replace("fa-sun", "fa-moon");
-  }
+  document.body.classList.toggle("dark", isDarkMode);
+  themeIcon.classList.replace(
+    isDarkMode ? "fa-moon" : "fa-sun",
+    isDarkMode ? "fa-sun" : "fa-moon"
+  );
 }
 
-// Event Listeners
+// ====== Event Listeners ======
 newJokeBtn.addEventListener("click", fetchJoke);
 copyJokeBtn.addEventListener("click", copyJokeToClipboard);
 themeToggle.addEventListener("click", toggleTheme);
 
-// Initialize
+// ====== Initialize ======
 fetchJoke();

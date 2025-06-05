@@ -3,58 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A fun and modern joke generator that delivers dad jokes instantly."
+    />
+    <meta
+      name="keywords"
+      content="joke generator, dad jokes, random jokes, humor app, fun web app"
+    />
+    <meta name="author" content="Your Name" />
+    <meta property="og:title" content="SnappyJoke" />
+    <meta
+      property="og:description"
+      content="Because laughter is the best medicine."
+    />
+    <meta property="og:image" content="favicon.png" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.png" type="image/x-icon" />
-    <title>Joke Generator V2</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Font Awesome -->
+    <title>SnappyJoke</title>
+
+    <!-- Font: Inter (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="fade-in">
         <div class="header-content">
-          <h1>Joke Generator V2</h1>
+          <h1>SnappyJoke</h1>
           <p>Because laughter is the best medicine</p>
         </div>
-        <button id="theme-toggle" class="theme-toggle">
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle Theme"
+        >
           <i class="fas fa-moon"></i>
         </button>
       </header>
 
       <main>
-        <div class="joke-card">
+        <section class="joke-card glass-effect slide-up" aria-live="polite">
           <div class="joke-content" id="joke-text">
-            <div class="loader"></div>
+            <div class="loader" aria-hidden="true"></div>
           </div>
           <div class="joke-actions">
-            <button id="new-joke-btn" class="btn primary">
+            <button
+              id="new-joke-btn"
+              class="btn primary"
+              aria-label="Get a new joke"
+            >
               <i class="fas fa-sync-alt"></i> New Joke
             </button>
-            <button id="copy-joke-btn" class="btn secondary">
+            <button
+              id="copy-joke-btn"
+              class="btn secondary"
+              aria-label="Copy joke to clipboard"
+            >
               <i class="far fa-copy"></i> Copy
             </button>
           </div>
-        </div>
+        </section>
       </main>
 
-      <!-- <footer>
+      <footer class="fade-in">
         <p>
           Powered by
-          <a href="https://icanhazdadjoke.com/" target="_blank"
+          <a
+            href="https://icanhazdadjoke.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             >icanhazdadjoke API</a
           >
         </p>
-      </footer> -->
+      </footer>
     </div>
 
     <script src="script.js"></script>
