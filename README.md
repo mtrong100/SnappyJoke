@@ -12,7 +12,7 @@ A modern and responsive web app that fetches and displays random dad jokes using
 
 ## 🚀 Live Demo
 
-[🔗 View Live Website](https://your-demo-link-here.com)
+[🔗 View Live Website](https://mtrong100.github.io/SnappyJoke/)
 
 ## 🛠️ Technologies Used
 
@@ -51,7 +51,7 @@ Powered by the [icanhazdadjoke API](https://icanhazdadjoke.com/api). Free, no ke
 
 ## 📸 Screenshot
 
-![Screenshot](./assets/demo.png) <!-- Add real screenshot later -->
+![Screenshot](./Screenshot.png) <!-- Add real screenshot later -->
 
 ## 🤝 Contributing
 
