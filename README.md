@@ -65,4 +65,4 @@ If you want to improve this project:
 
 ## 📄 License
 
-MIT © 2025 [Your Name](https://github.com/yourusername)
+MIT © 2025 [TrongNguyen](https://github.com/mtrong100)
